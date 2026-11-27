@@ -1,0 +1,234 @@
+/* Deal Beacon — Black Friday 2026. One stylesheet, system fonts only, no network. */
+
+:root {
+  --ink: #17130a;
+  --muted: #6b6252;
+  --paper: #fffaf0;
+  --card: #ffffff;
+  --line: #e8ddc8;
+  --amber: #b45309;
+  --amber-dark: #92400e;
+  --green: #166534;
+  --green-bg: #dcfce7;
+  --gold-bg: #fef3c7;
+  --red: #991b1b;
+  --red-bg: #fee2e2;
+  --grey-bg: #f3f4f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+.masthead {
+  background: #17130a;
+  color: #fffaf0;
+  padding: 28px 0 24px;
+  border-bottom: 5px solid var(--amber);
+}
+
+.masthead .kicker {
+  margin: 0 0 6px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fbbf24;
+}
+
+.masthead h1 { margin: 0; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; }
+.masthead h1 a { color: inherit; text-decoration: none; }
+.masthead .tagline { margin: 8px 0 0; color: #e7e5e4; font-size: 18px; }
+
+a { color: var(--amber-dark); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ---- filters ---- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: end;
+  margin: 24px 0 8px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.filters input[type="search"],
+.filters select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  padding: 8px 10px;
+  border: 1px solid #d6cdb8;
+  border-radius: 8px;
+  background: #fff;
+  min-width: 0;
+}
+
+.filters input[type="search"] { width: 240px; }
+
+.filters label.real-only {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 9px;
+  color: var(--ink);
+}
+
+/* ---- stats ---- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 16px 0 4px;
+}
+
+.stats div {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.stats strong { display: block; font-size: 28px; line-height: 1.1; }
+.stats span { font-size: 13px; color: var(--muted); }
+
+.count-line { color: var(--muted); font-size: 15px; margin: 12px 0 16px; }
+.empty { font-size: 18px; padding: 24px 0; }
+
+/* ---- deal cards ---- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.category { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+.verdict {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.verdict-lowest { background: var(--green-bg); color: var(--green); }
+.verdict-strong { background: var(--gold-bg); color: var(--amber-dark); }
+.verdict-good { background: #dbeafe; color: #1e40af; }
+.verdict-routine { background: var(--grey-bg); color: #4b5563; }
+.verdict-weak { background: var(--red-bg); color: var(--red); }
+
+.card h3 { margin: 0 0 2px; font-size: 18px; line-height: 1.3; }
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card h3 a:hover { color: var(--amber-dark); text-decoration: underline; }
+
+.store { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+
+.price { margin: 0; font-size: 17px; }
+.price strong { font-size: 26px; }
+.price s { color: var(--muted); font-weight: 400; }
+.price.big strong { font-size: 36px; }
+
+.saving { margin: 2px 0 10px; font-weight: 700; color: var(--green); }
+.saving.big { font-size: 19px; }
+
+.checked { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+
+.actions { margin: auto 0 0; display: flex; gap: 12px; align-items: baseline; }
+
+.button {
+  display: inline-block;
+  background: var(--amber);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+.button:hover { background: var(--amber-dark); }
+
+.details { font-size: 14px; }
+
+/* ---- deal page ---- */
+
+.back { display: inline-block; margin: 24px 0 4px; }
+
+.detail { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.detail h1 { margin: 4px 0 8px; font-size: 30px; line-height: 1.2; }
+.detail h2 { font-size: 19px; margin: 24px 0 8px; }
+.detail dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; margin: 16px 0; }
+.detail dt { font-weight: 700; }
+.detail dd { margin: 0; }
+.elsewhere { padding-left: 20px; }
+.fineprint { color: var(--muted); font-size: 14px; }
+
+/* ---- method section ---- */
+
+.method {
+  margin: 40px 0 8px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.method h2 { margin-top: 0; }
+.method h3 { margin: 20px 0 8px; }
+.method ul { padding-left: 20px; }
+.method li { margin-bottom: 4px; }
+
+footer.wrap { padding-top: 8px; padding-bottom: 48px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .masthead h1 { font-size: 34px; }
+  .grid { grid-template-columns: 1fr; }
+  .filters input[type="search"] { width: 100%; }
+  .filters label { width: 100%; }
+  .filters select { width: 100%; }
+  .detail { padding: 16px; }
+  .detail h1 { font-size: 25px; }
+}
